@@ -1,0 +1,75 @@
+<!--
+ html code for login page
+-->
+{% load static %}
+<!DOCTYPE html>
+<head>
+  
+    <title>Login page</title>
+    <style>
+        body{
+            text-align: center;
+            background-image: url("{% static 'photos/back.png' %}");
+        }
+        label{
+            display: block;
+            margin: 20px;
+        
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            margin-top: 80px ;
+    
+            border: 3px solid white;
+            border-radius: 50px;
+            background-color: aliceblue;
+        }
+        input{
+            font-size: 20px;
+            border: 0px solid;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        img{
+            border: 2px solid black;
+            border-radius: 50px;
+           
+        }
+        label{
+            color: aliceblue;
+        }
+        input:hover{
+           box-shadow: 0 0 10px white;
+        }
+        .a{
+            color: rgb(0, 0, 0);
+        }
+        form{
+            border: 2px solid white;
+            backdrop-filter: blur(15px);
+            padding: 100px;
+            margin: 100px 300px;
+        }
+        #ff{
+            font-size: 30px;
+        }
+    </style>
+    <link rel="icon" href="{% static 'photos/logo.ico' %}" type="image/x-icon">
+</head>
+<body>
+    
+    <form action="main.html" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+     <label id="ff">user name</label>
+     <input type="text"  placeholder="type your user name..." title="Enter avalid user name" required >
+     <label id="ff">Password</label>
+     <input type="password" placeholder="type your pass.."  title="6 char min" required>
+     <button type="submit" class="a">Sign Up</button>
+    </form>
+</body>
+</html>
